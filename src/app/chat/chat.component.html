@@ -1,16 +1,27 @@
-<h1> Angular Bot </h1>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+<link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+<link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
 
-<ng-container *ngFor="let message of messages | async">
-  <div class="message" [ngClass]="{ 'from': message.sentBy === 'bot',
-                                      'to': message.sentBy === 'user' }">
-    {{message.content}}
+<div class="container">
+  <h1> Angular Bot </h1>
 
+  <div class="border chat-container">
+    <div class="margin-l-r-6">
+      <div class="message-container">
+        <ng-container *ngFor="let message of messages | async">
+          <div class="message" [ngClass]="{ 'balaoDialogoBot': message.sentBy === 'bot',
+                                            'balaoDialogoUser': message.sentBy === 'user' }">
+            <span> {{message.content}} </span>
+          </div>
+        </ng-container>
+      </div>
+      <div>
+        <label for="nameField"> Your Message </label>
+        <input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text">
+        <div class="float-right">
+          <button (click)="sendMessage()">Send</button>
+        </div>
+      </div>
+    </div>
   </div>
-
-</ng-container>
-
-<label for="nameField"> Your Message </label>
-
-<input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text"><br>
-
-<button (click)="sendMessage()">Send</button>
+</div>

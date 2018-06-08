@@ -1,0 +1,78 @@
+.border
+{
+    /* border-style: solid;
+    border-width: 1px;
+    border-radius: 10px; */
+    background-color: #FAFAFA
+}
+
+.chat-container
+{
+    width: 600px;
+    height: 580px;
+}
+.margin-l-r-6
+{
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.message-container
+{
+    width: 594px;
+    height: 455px;
+    overflow-y: scroll;
+}
+
+.balaoDialogoUser {
+    position: relative;
+    background-color: #9b4dca;
+    border-radius: 10px;
+    width: 60px;
+    height: 30px;
+    line-height: 30px; /* vertically center */
+    color: #FAFAFA;
+    text-align: center;
+    margin-bottom: 15px;
+    float: left;
+    display: block;
+    }
+     
+    .balaoDialogoUser:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 15px solid;
+    border-top-color: #9b4dca;
+    top: 100%;
+    left: 50%;
+    margin-left: -15px; /* ajustar pela largura do balão */
+
+    }
+
+    .balaoDialogoBot {
+        position: relative;
+        background-color: #AAAAAA;
+        border-radius: 10px;
+        width: 60px;
+        height: 30px;
+        line-height: 30px; /* vertically center */
+        color: #FAFAFA;
+        text-align: center;
+        margin-bottom: 15px;
+        float: left;
+        display: block;
+        }
+         
+        .balaoDialogoBot:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border: 15px solid;
+        border-top-color: #AAAAAA;
+        top: 100%;
+        left: 50%;
+        margin-left: -15px; /* ajustar pela largura do balão */
+        }

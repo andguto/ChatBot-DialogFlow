@@ -7,17 +7,17 @@
 
   <div class="border chat-container">
     <div class="margin-l-r-6">
-      <div class="message-container">
+      <div #messageContainer [scrollTop]="messageContainer.scrollHeight" class="message-container">
         <ng-container *ngFor="let message of messages | async">
-          <div class="message" [ngClass]="{ 'balaoDialogoBot': message.sentBy === 'bot',
-                                            'balaoDialogoUser': message.sentBy === 'user' }">
+          <div class="message" [ngClass]="{ 'balaoDialogoBot float-left': message.sentBy === 'bot',
+                                            'balaoDialogoUser float-right': message.sentBy === 'user' }">
             <span> {{message.content}} </span>
           </div>
         </ng-container>
       </div>
       <div>
         <label for="nameField"> Your Message </label>
-        <input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text">
+        <input autofocus id="nameField" value="nameField" [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text">
         <div class="float-right">
           <button (click)="sendMessage()">Send</button>
         </div>

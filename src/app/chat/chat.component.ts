@@ -8,7 +8,7 @@ import 'rxjs/add/operator/scan';
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
-export class ChatComponent implements OnInit {
+export class ChatComponent implements OnInit  {
 
   messages: Observable<Message[]>;
   formValue: string;
